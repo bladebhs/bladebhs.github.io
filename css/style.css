@@ -1,19 +1,55 @@
-body {font-family: "Fira Code"; margin: 0 auto; background: #efefef; line-height: 1.8em; padding: 12px; box-sizing: border-box; color: #333;}
-body, html {height: 100%;}
+body { font-family: "PT Sans" !important; }
 
-//a {color: #777; text-decoration: none; border-bottom: 1px solid #CCFF26;}
-//a:hover {border-bottom: 1px solid #CCFF26; color: #222}
-p {font-weight: 500; font-size: 16px;}
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "PT Sans" !important;
+}
 
-.name {font-size: 32px; font-weight: 900;}
-h2 {font-size: 22px; line-height: 1.1;}
-h3 {font-size: 18px; line-height: 1.1;}
+a { font-weight: bold; }
 
-.container {padding: 30px 50px; overflow: auto;}
+.mt-1 { margin-top: 1rem !important; }
 
-.inline-list {list-style: none; margin: 0; padding: 0;}
-.inline-list li {display: inline-block; margin-right: 1.5rem;}
+.float-right { float: right; }
 
-.job {margin: 4rem 0;}
+.is-row { margin-left: 0 !important; }
 
-.tag {display: inline-block; color: #555; border: 2px solid #777; font-size: 12px; padding: 0 10px; line-height: 1.5;}
+.is-active {
+  cursor: text;
+  color: #111;
+  text-decoration: none;
+}
+
+.is-active:hover {
+  color: #111;
+}
+
+#about {
+  height: 180px;
+  margin: 3rem 0;
+}
+
+.label.is-tertiary {
+  color: #555;
+  font-weight: normal;
+  font-size: 0.875em;
+  text-transform: none;
+}
+
+.job {margin: 2rem 0;}
+
+.page {
+  width: 800px;
+  margin: 0 auto;
+  padding-bottom: 2rem !important;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+#photo {
+  display: block;
+  float: left;
+  width: 200px;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}

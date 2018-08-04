@@ -2,61 +2,132 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="http://fonts.fontstorage.com/import/firacode.css" rel="preload" as="font">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.fontstorage.com/import/ptsans.css" rel="preload" as="font">
+    <link href="http://fonts.fontstorage.com/import/ptmono.css" rel="preload" as="font">
+    <link rel="stylesheet" type="text/css" href="css/kube.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="js/jquery-3.3.1.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="js/jquery-lang.min.js" charset="utf-8" type="text/javascript"></script>
+    <script type="text/javascript">
+    	// Create language switcher instance
+    	var lang = new Lang();
+      lang.dynamic('en', 'js/langpack/en.json');
+    	lang.init({
+    		defaultLang: 'ru'
+    	});
+
+      $('.select-lang').click(function() {
+        $('.select-lang').toggleClass('is-active');
+      });
+    </script>
     <title>Владислав Исаков, Ruby developer</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1 class="name">Владислав Исаков, Ruby developer</h1>
-        <ul class="inline-list">
-          <li><i class="far fa-envelope"></i> <a href="mailto:bladebhs@gmail.com">bladebhs@gmail.com</a></li>
+    <div class="page">
+      <header class="header">
+        <ul class="is-bar">
+          <li><i class="fas fa-at"></i> <a href="mailto:bladebhs@gmail.com">bladebhs@gmail.com</a></li>
           <li><i class="fab fa-telegram"></i> <a href="https://t.me/visakov" target="_blank">@visakov</a></li>
+          <li><i class="fab fa-skype"></i> <a href="https://join.skype.com/invite/gApQ0IIenx5f" target="_blank">live:bladebhs</a></li>
           <li><i class="fab fa-github"></i> <a href="https://github.com/bladebhs" target="_blank">github/bladebhs</a></li>
+          <li class="float-right">
+            <a href="#lang-ru" class="select-lang is-active" onclick="window.lang.change('ru'); $('.select-lang').toggleClass('is-active'); return false;">РУ</a> /
+            <a href="#lang-en" class="select-lang" onclick="window.lang.change('en'); $('.select-lang').toggleClass('is-active'); return false;">EN</a>
+          </li>
         </ul>
       </header>
-      <div class="job">
-        <h2>Фриланс, Ruby developer</h2>
-        <h3>2015-настоящее время</h3>
-        <article>
-          <p>Участвую в разработке маркетингового сервиса <a href="https://placto.space">Placto</a>. Добавляю новый функционал и дорабатываю существующий, настраиваю роли и политики, покрываю код тестами, верстаю. Настроил PWA, оптимизировал загрузку стилей и скриптов.
-            <br><span class="tag">RoR 5</span> <span class="tag">RSpec</span> <span class="tag">Devise</span> <span class="tag">Pundit</span> <span class="tag">Slim</span> <span class="tag">jQuery</span> <span class="tag">Materialize</span> <span class="tag">Capistrano</span> <span class="tag">nginx</span>
-          </p>
-          <p>Разрабатывал сервис <a href="https://hesadmin.com">hesadmin</a> для компании БККС. Реализовал проверочные листы (со статистикой), карты наблюдений, отслеживание актуальности обучения сотрудников и проверок оборудования. Для каждого раздела сделана фильтрация и поиск.
-            <br><span class="tag">RoR 5</span> <span class="tag">Pundit</span> <span class="tag">Filterrific</span> <span class="tag">Devise</span> <span class="tag">eCharts</span> <span class="tag">jQuery</span> <span class="tag">Bootstrap</span> <span class="tag">Mina</span> <span class="tag">nginx</span>
-          </p>
-          <p>Написал интеграцию с HomeAway Affiliate API для сервиса аренды жилья <a href="https://bnbdaily.com">BnB Daily</a>. Сделал задачи для начального наполнения БД и ежедневного обновления.
-            <br><span class="tag">RoR 5</span> <span class="tag">Faraday</span> <span class="tag">Typhoeus</span> <span class="tag">Sidekiq</span> <span class="tag">Heroku</span>
-          </p>
-          <p>Соавтор платформы дистанционного обучения для обучающего центра <a href="http://test.specialist-nt.ru">«Специалист-НТ»</a>.
-            Написал авторизацию, сделал кабинеты для преподавателей и студентов и весь фронтенд.
-            <br><span class="tag">RoR 4</span> <span class="tag">Pundit</span> <span class="tag">jQuery</span> <span class="tag">Foundation</span> <span class="tag">Capistrano → Mina</span>
-          </p>
-        </article>
-      </div>
+      <main class="main">
+        <div class="main-body" data-lang-token="page">
+          <div id="about">
+            <img src="photo.jpg" id="photo">
+            <h3 lang="ru">Владислав Исаков, Ruby-разработчик</h3>
+            <p lang="ru">Начал работать в ИТ более 10 лет назад. С 2015 г. занимаюсь разработкой на Ruby on Rails (full-stack). Есть опыт работы в распределенной команде. Люблю Linux, open-source, изучать новое и докапываться до сути. В свободное время занимаюсь фотографией, читаю и провожу время с семьей.</p>
+          </div>
+          <div id="skills">
+            <h3 lang="ru">Навыки</h3>
+            <div class="is-row is-bricks">
+              <div class="col is-25">
+                <strong lang="ru">Языки</strong>
+                <ul class="is-unstyled">
+                  <li>Ruby</li>
+                  <li>JavaScript</li>
+                  <li>CSS/SASS</li>
+                  <li>SQL</li>
+                  <li>C++</li>
+                  <li>Python</li>
+                </ul>
+              </div>
+              <div class="col is-25">
+                <strong lang="ru">Фреймворки</strong>
+                <ul class="is-unstyled">
+                  <li>Ruby on Rails 4/5</li>
+                  <li>Sinatra</li>
+                  <li>Bootstrap</li>
+                  <li>Foundation</li>
+                </ul>
+              </div>
+              <div class="col is-25">
+                <strong lang="ru">Инструменты</strong>
+                <ul class="is-unstyled">
+                  <li>Git, Github, Bitbucket</li>
+                  <li>Bash</li>
+                  <li>Travis CI</li>
+                  <li>RSpec, Minitest</li>
+                  <li>Capistrano, Mina</li>
+                  <li>Atom, VS Code</li>
+                </ul>
+              </div>
+              <div class="col is-25">
+                <strong lang="ru">Администрирование</strong>
+                <ul class="is-unstyled">
+                  <li>Ubuntu</li>
+                  <li>PostgreSQL</li>
+                  <li>nginx</li>
+                  <li>Passenger</li>
+                  <li>Heroku</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h3 lang="ru">Опыт работы</h3>
+          <div class="job mt-1">
+            <h4 lang="ru">Фриланс, Ruby developer</h4>
+            <h5 lang="ru">2015-настоящее время</h5>
+            <p>Участвовал в разработке маркетингового сервиса <a href="https://placto.space" target="_blank">Placto</a>. Добавлял новый функционал и дорабатывал существующий, настраивал роли и политики, писал тесты, верстал. Настроил <a href="https://en.wikipedia.org/wiki/Progressive_Web_Apps" target="_blank">PWA</a>, оптимизировал загрузку стилей и скриптов.
+              <br><span class="label is-tertiary">RoR 5</span> <span class="label is-tertiary">RSpec</span> <span class="label is-tertiary">Devise</span> <span class="label is-tertiary">Pundit</span> <span class="label is-tertiary">Slim</span> <span class="label is-tertiary">jQuery</span> <span class="label is-tertiary">Materialize</span> <span class="label is-tertiary">Capistrano</span> <span class="label is-tertiary">Nginx</span>
+            </p>
+            <p>Разрабатывал сервис <a href="https://hesadmin.com" target="_blank">hesadmin</a> для компании БККС. Реализовал проверочные листы (со статистикой), карты наблюдений, отслеживание актуальности обучения сотрудников и проверок оборудования. Настроил аутентификацию, авторизацию и роли. Для каждого раздела сделал фильтрацию и поиск.
+              <br><span class="label is-tertiary">RoR 5</span> <span class="label is-tertiary">Pundit</span> <span class="label is-tertiary">Filterrific</span> <span class="label is-tertiary">Devise</span> <span class="label is-tertiary">eCharts</span> <span class="label is-tertiary">jQuery</span> <span class="label is-tertiary">Bootstrap</span> <span class="label is-tertiary">Mina</span> <span class="label is-tertiary">Nginx</span>
+            </p>
+            <p>Написал интеграцию с HomeAway Affiliate API для сервиса аренды жилья <a href="https://bnbdaily.com" target="_blank">BnB Daily</a>. Сделал задачи для начального наполнения БД и ежедневного обновления.
+              <br><span class="label is-tertiary">RoR 5</span> <span class="label is-tertiary">Faraday</span> <span class="label is-tertiary">Typhoeus</span> <span class="label is-tertiary">Sidekiq</span> <span class="label is-tertiary">Heroku</span>
+            </p>
+            <p>Соавтор платформы дистанционного обучения для обучающего центра <a href="http://test.specialist-nt.ru" target="_blank">«Специалист-НТ»</a>.
+              Написал авторизацию, сделал кабинеты для преподавателей и студентов и весь фронтенд.
+              <br><span class="label is-tertiary">RoR 4</span> <span class="label is-tertiary">Pundit</span> <span class="label is-tertiary">jQuery</span> <span class="label is-tertiary">Foundation</span> <span class="label is-tertiary">Capistrano -> Mina</span>
+            </p>
+          </div>
 
-      <div class="job">
-        <h2>Водоканал-НТ, инженер-программист</h2>
-        <h3>2008-2017</h3>
-        <article>
-          <p>Разрабатывал корпоративный портал: модуль для учета оргтехники и расходных материалов, опрос сетевых МФУ по протоколу SNMP, телефонный справочник, админку. Настраивал веб-сервер на Ubuntu Server.
-            <br><span class="tag">RoR 3.2 → 4</span> <span class="tag">PostgreSQL</span> <span class="tag">Gon</span> <span class="tag">jQuery</span> <span class="tag">GitLab CE</span> <span class="tag">Capistrano</span> <span class="tag">nginx</span> <span class="tag">Passenger</span>
-          </p>
-          <p>Администрировал около 20 компьютеров на Ubuntu плюс 2 сервера (Ubuntu Server и FreeBSD).</p>
-          <p>Участвовал во внедрении и сопровождении 1С Предприятие 8.3. Дорабатывал самописную конфигурацию для расчетов с абонентами.</p>
-        </article>
-      </div>
+          <div class="job">
+            <h4 lang="ru">Водоканал-НТ, инженер-программист</h4>
+            <h5>2008-2017</h5>
+            <p>Разрабатывал корпоративный портал: модуль для учета оргтехники и расходных материалов, опрос сетевых МФУ по протоколу SNMP, телефонный справочник, админку. Настраивал веб-сервер на Ubuntu Server.
+              <br><span class="label is-tertiary">RoR 3.2 -> 4</span> <span class="label is-tertiary">PostgreSQL</span> <span class="label is-tertiary">Gon</span> <span class="label is-tertiary">jQuery</span> <span class="label is-tertiary">GitLab CE</span> <span class="label is-tertiary">Capistrano</span> <span class="label is-tertiary">Nginx</span> <span class="label is-tertiary">Passenger</span>
+            </p>
+            <p>Администрировал около 20 компьютеров на Ubuntu и 2 сервера (Ubuntu Server и FreeBSD).</p>
+            <p>Участвовал во внедрении и сопровождении 1С Предприятие 8.3. Дорабатывал самописную конфигурацию для расчетов с абонентами.</p>
+          </div>
 
-      <div class="job">
-        <h2>ЕВРАЗ НТМК, инженер-программист</h2>
-        <h3>2007-2008</h3>
-        <article>
-          <p>Участвовал в разработке внутренней системы для взвешивания вагонов.</p>
-        </article>
-      </div>
-  </div>
+          <div class="job">
+            <h4>ЕВРАЗ НТМК, инженер-программист</h4>
+            <h5>2007-2008</h5>
+            <p>Участвовал в разработке внутренней системы для взвешивания вагонов.</p>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
